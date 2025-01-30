@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Movie;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +15,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $json = File::get(database_path('dataset/movies.json'));
+        $movies = json_decode($json, true);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        foreach ($movies as $movie) {
+            Movie::create([
+                'adult' => false,
+                'bg_path' => $movie['bg_path'],
+                'language' => $movie['language'],
+                'title' => $movie['title'],
+                'overview' => $movie['overview'],
+                'tagline' => $movie['tagline'],
+                'poster_path' => $movie['poster_path'],
+                'release_date' => $movie['release_date'],
+                'rating' => $movie['rating'],
+                'genres' => json_encode($movie['genres']),
+                'budget' => $movie['budget'],
+                'duration' => $movie['duration'],
+                'cast' => json_encode($movie['cast']),
+                'director' => json_encode($movie['director']),
+            ]);
+        }
     }
 }
