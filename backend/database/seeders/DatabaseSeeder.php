@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Genre;
+use App\Models\LikedMovie;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -18,7 +19,8 @@ class DatabaseSeeder extends Seeder
             MovieSeeder::class,
             GenresSeeder::class,
             MovieGenreSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+            LikedMovieSeeder::class
         ]);
     }
 }
