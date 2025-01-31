@@ -50,4 +50,8 @@ class User extends Authenticatable
     public function likedMovies(): HasMany {
         return $this->hasMany(LikedMovie::class, 'liked_movies');
     }
+
+    public function watchLists(): HasMany {
+        return $this->hasMany(LikedMovie::class, 'liked_movies');
+    }
 }

@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             GenresSeeder::class,
             MovieGenreSeeder::class,
             UserSeeder::class,
-            LikedMovieSeeder::class
+            MovieUserRelationSeeder::class
         ]);
     }
 }
