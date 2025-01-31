@@ -10,10 +10,14 @@ class Movie extends Model
 {
     public function genres(): BelongsToMany
     {
-        return $this->belongsToMany(Genre::class, 'movie_genres');
+        return $this->belongsToMany(Genre::class);
     }
 
     public function likedBy(): HasMany {
-        return $this->hasMany(User::class, 'liked_movies');
+        return $this->hasMany(LikedMovie::class);
+    }
+
+    public function comments(): HasMany {
+        return $this->hasMany(MovieComment::class);
     }
 }

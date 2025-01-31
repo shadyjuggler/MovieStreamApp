@@ -27,7 +27,7 @@ class MovieUserRelationSeeder extends Seeder
             $watchListCount = rand(2, 18);
 
             // get spcific random count of movies ids from all $movies ids
-            $randomMovieIds = array_rand($moviesFlipped, $likedMoviesCount);
+            $randomMovieIds = (array)array_rand($moviesFlipped, $likedMoviesCount);
 
             foreach($randomMovieIds as $movieId) {
                 LikedMovie::create([
@@ -36,7 +36,7 @@ class MovieUserRelationSeeder extends Seeder
                 ]);
             }
 
-            $randomMovieIds = array_rand($moviesFlipped, $watchListCount);
+            $randomMovieIds = (array)array_rand($moviesFlipped, $watchListCount);
 
             foreach($randomMovieIds as $movieId) {
                 WatchList::create([
