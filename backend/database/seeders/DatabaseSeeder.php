@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             MovieSeeder::class,
             GenresSeeder::class,
-            MovieGenreSeeder::class
+            MovieGenreSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
