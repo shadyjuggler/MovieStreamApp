@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('poster_path');
             $table->string('release_date');
             $table->float('rating', 1);
-            $table->json('genres');
             $table->unsignedBigInteger('budget');
             $table->unsignedInteger('duration');
             $table->json('cast');

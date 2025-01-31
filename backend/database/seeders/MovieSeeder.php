@@ -29,7 +29,6 @@ class MovieSeeder extends Seeder
                 'poster_path' => $movie['poster_path'],
                 'release_date' => $movie['release_date'],
                 'rating' => $movie['rating'],
-                'genres' => json_encode($movie['genres']),
                 'budget' => $movie['budget'],
                 'duration' => $movie['duration'],
                 'cast' => json_encode($movie['cast']),
