@@ -19,6 +19,8 @@ type User {
 	email: String!
 	email_verified_at: DateTime
 	watchList: [Movie]! @field(resolver: "App\\GraphQL\\Queries\\UserWatchList")
+	likes: [Movie]! @field(resolver: "App\\GraphQL\\Queries\\UserLikes")
+	comments: [Comment]! @field(resolver: "App\\GraphQL\\Queries\\UserComments")
 	created_at: DateTime!
 	updated_at: DateTime!
 }
@@ -38,6 +40,10 @@ type Movie {
 	duration: Int!
 	director: String! # to fix, that field returning json as string
 	cast: String! # to fix, that field returning json as string
+
+	likes: Int! @field(resolver: "App\\GraphQL\\Queries\\MovieLikes")
+	comments: [Comment!]! @field(resolver: "App\\GraphQL\\Queries\\MovieComments")
+
 	created_at: DateTime!
 	updated_at: DateTime!
 }
@@ -47,4 +53,11 @@ type Genre {
 	name: String!
 	created_at: DateTime!
 	updated_at: DateTime!
+}
+
+type Comment {
+	id: ID!
+	user: User
+	comment: String!
+	movie: Movie
 }
