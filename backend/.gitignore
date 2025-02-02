@@ -21,3 +21,6 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+schema-directives.graphql
+programmatic-types.graphql
+_lighthouse_ide_helper.php

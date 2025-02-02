@@ -16,35 +16,7 @@ class MovieUserRelationSeeder extends Seeder
      */
     public function run(): void
     {
-        $users = User::all();
-
-        $movies = Movie::pluck('id')->toArray();
-
-        foreach ($users as $user) {
-            $moviesFlipped = array_flip($movies);
-
-            $likedMoviesCount = rand(4, 15);
-            $watchListCount = rand(2, 18);
-
-            // get spcific random count of movies ids from all $movies ids
-            $randomMovieIds = (array)array_rand($moviesFlipped, $likedMoviesCount);
-
-            foreach($randomMovieIds as $movieId) {
-                LikedMovie::create([
-                    'user_id' => $user->id,
-                    'movie_id' => $movieId
-                ]);
-            }
-
-            $randomMovieIds = (array)array_rand($moviesFlipped, $watchListCount);
-
-            foreach($randomMovieIds as $movieId) {
-                WatchList::create([
-                    'user_id' => $user->id,
-                    'movie_id' => $movieId
-                ]);
-            }
-
-        }
+        
+        
     }
 }
