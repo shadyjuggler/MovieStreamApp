@@ -11,8 +11,6 @@ type Query {
 
 	genre(id: ID! @eq): Genre @find
 	genres:[Genre!]! @paginate
-
-	watchList(user_id: ID!): [Movie]!
 }
 
 type User {
@@ -20,6 +18,7 @@ type User {
 	username: String!
 	email: String!
 	email_verified_at: DateTime
+	watchList: [Movie]! @field(resolver: "App\\GraphQL\\Queries\\UserWatchList")
 	created_at: DateTime!
 	updated_at: DateTime!
 }
