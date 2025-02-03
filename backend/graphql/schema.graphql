@@ -13,6 +13,12 @@ type Query {
 	genres:[Genre!]! @paginate
 }
 
+type Mutation {
+	createGenre(name: String!): Genre! @create
+	updateGenre(id: ID!, name: String): Genre! @update
+	deleteGenre(id: ID! @whereKey): String! @field(resolver: "App\\GraphQL\\Mutations\\DeleteGenre")
+}
+
 type User {
 	id: ID!
 	username: String!
@@ -31,7 +37,6 @@ type Movie {
 	id: ID!
 	adult: Boolean!
 	bg_path: String!
-	genres: [Genre!]! @belongsToMany(relation: "genres")
 	language: String!
 	title: String!
 	overview: String!
@@ -46,6 +51,7 @@ type Movie {
 
 	likes: Int! @field(resolver: "App\\GraphQL\\Queries\\MovieLikes")
 	comments: [Comment!]! @hasMany(relation: "comments")
+	genres: [Genre!]! @belongsToMany(relation: "genres")
 
 	created_at: DateTime!
 	updated_at: DateTime!
