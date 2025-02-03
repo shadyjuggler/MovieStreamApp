@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -47,15 +48,18 @@ class User extends Authenticatable
         ];
     }
 
-    public function likedMovies(): HasMany {
-        return $this->hasMany(LikedMovie::class);
+    public function likedMovies(): BelongsToMany
+    {
+        return $this->belongsToMany(Movie::class, 'liked_movies');
     }
 
-    public function watchLists(): HasMany {
-        return $this->hasMany(WatchList::class);
+    public function watchLists(): BelongsToMany
+    {
+        return $this->belongsToMany(Movie::class, 'watch_lists');
     }
 
-    public function comments(): HasMany {
+    public function comments(): HasMany
+    {
         return $this->hasMany(MovieComment::class);
     }
 }

@@ -9,6 +9,6 @@ final class UserWatchList
     /** @param  array{}  $args */
     public function __invoke(User $user)
     {
-        return $user->watchLists->map(fn($watchList) => $watchList->movie);
+        return $user->watchLists;
     }
 }

@@ -9,6 +9,6 @@ final class UserLikes
     /** @param  array{}  $args */
     public function __invoke(User $user)
     {
-        return $user->likedMovies->map(fn($likedMovie) => $likedMovie->movie);
+        return $user->likedMovies;
     }
 }

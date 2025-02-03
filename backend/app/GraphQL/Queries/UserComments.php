@@ -9,6 +9,6 @@ final class UserComments
     /** @param  array{}  $args */
     public function __invoke(User $user)
     {
-        dd($user->comments);
+        return $user->comments;
     }
 }

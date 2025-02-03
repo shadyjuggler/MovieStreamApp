@@ -19,8 +19,10 @@ type User {
 	email: String!
 	email_verified_at: DateTime
 	watchList: [Movie]! @field(resolver: "App\\GraphQL\\Queries\\UserWatchList")
-	likes: [Movie]! @field(resolver: "App\\GraphQL\\Queries\\UserLikes")
+	likes: [Movie!]! @field(resolver: "App\\GraphQL\\Queries\\UserLikes")
+
 	comments: [Comment]! @field(resolver: "App\\GraphQL\\Queries\\UserComments")
+
 	created_at: DateTime!
 	updated_at: DateTime!
 }
