@@ -48,14 +48,14 @@ class User extends Authenticatable
         ];
     }
 
-    public function likedMovies(): BelongsToMany
-    {
-        return $this->belongsToMany(Movie::class, 'liked_movies');
-    }
-
     public function watchLists(): BelongsToMany
     {
         return $this->belongsToMany(Movie::class, 'watch_lists');
+    }
+
+    public function likedMovies(): BelongsToMany
+    {
+        return $this->belongsToMany(Movie::class, 'liked_movies');
     }
 
     public function comments(): HasMany

@@ -18,10 +18,10 @@ type User {
 	username: String!
 	email: String!
 	email_verified_at: DateTime
-	watchList: [Movie]! @field(resolver: "App\\GraphQL\\Queries\\UserWatchList")
-	likes: [Movie!]! @field(resolver: "App\\GraphQL\\Queries\\UserLikes")
 
-	comments: [Comment]! @field(resolver: "App\\GraphQL\\Queries\\UserComments")
+	watchList: [Movie]! @belongsToMany(relation: "watchLists")
+	likes: [Movie!]! @belongsToMany(relation: "likedMovies")
+	comments: [Comment]! @hasMany(relation: "comments")
 
 	created_at: DateTime!
 	updated_at: DateTime!
@@ -31,6 +31,7 @@ type Movie {
 	id: ID!
 	adult: Boolean!
 	bg_path: String!
+	genres: [Genre!]! @belongsToMany(relation: "genres")
 	language: String!
 	title: String!
 	overview: String!
@@ -44,7 +45,7 @@ type Movie {
 	cast: String! # to fix, that field returning json as string
 
 	likes: Int! @field(resolver: "App\\GraphQL\\Queries\\MovieLikes")
-	comments: [Comment!]! @field(resolver: "App\\GraphQL\\Queries\\MovieComments")
+	comments: [Comment!]! @hasMany(relation: "comments")
 
 	created_at: DateTime!
 	updated_at: DateTime!
