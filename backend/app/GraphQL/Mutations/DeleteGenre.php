@@ -12,7 +12,6 @@ final readonly class DeleteGenre
     /** @param  array{}  $args */
     public function __invoke(null $_, array $args): string
     {
-
         return Genre::destroy($args['id']) ?
             "Genre by id {$args['id']} deleted successfuly!"
             :

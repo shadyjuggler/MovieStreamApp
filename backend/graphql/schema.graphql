@@ -60,6 +60,7 @@ type Movie {
 type Genre {
 	id: ID!
 	name: String!
+	movies: [Movie!]! @belongsToMany(relation: "movies")
 	created_at: DateTime!
 	updated_at: DateTime!
 }
