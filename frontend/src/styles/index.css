@@ -8,8 +8,15 @@
     --black-2: #1A1A1A;
 
     --gray-4: #BFBFBF;
+    --gray-5: #999999;
 
-    --white: #FFFFFF
+    --accent: #E50000;
+
+    --white: #FFFFFF;
+}
+
+svg {
+    fill: inherit;
 }
 
 .bg-black-1 {
@@ -24,12 +31,20 @@
     border-color: var(--black-2);
 }
 
-.text-gray-4 {
+.text-gray-5 {
     color: var(--gray-4);
 }
 
-.text-white {
-    color: var(--white);
+.text-gray-5 {
+    color: var(--gray-5);
+}
+
+.bg-accent {
+    background: var(--accent);
+}
+
+.fill-accent {
+    fill: var(--accent);
 }
 
 .navlink {
@@ -52,7 +67,16 @@ button {
     @apply cursor-pointer;
 }
 
-.shadow-y1 {
-    background: linear-gradient(to bottom, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 0) 100%);
+.btn {
+    @apply flex gap-3 items-center rounded-md py-2.5 px-4.5;
+    background: var(--accent);
+    color: var(--white);
+    transition: 0.15s ease-in-out;
+    fill: var(--white);
+}
 
+.btn:hover {
+    background: var(--white); 
+    color: var(--accent);
+    fill: var(--accent);
 }

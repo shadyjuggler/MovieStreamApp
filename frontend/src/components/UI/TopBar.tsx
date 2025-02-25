@@ -7,7 +7,7 @@ import NavBar from "./NavBar";
 const TopBar: React.FC = () => {
 
   return (
-    <div className="relative z-10 flex py-6 items-center">
+    <div className="flex py-6 items-center">
       <div className="basis-1/3">
         <img src={Logo} alt="logo" />
       </div>
