@@ -17,7 +17,7 @@ const CrossPlatform: React.FC = () => {
                     </p>
                 </div>
 
-                <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4`">
+                <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {platformData.map((platform) => (
                         <div className="flex flex-col gap-8 rounded-lg border-2 border-black-2 p-8 red-gradient-bg cursor-pointer">
                             <div className="flex gap-4 items-center">

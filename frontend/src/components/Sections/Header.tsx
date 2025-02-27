@@ -36,7 +36,7 @@ const Header: React.FC = () => {
             <img
                 src={Wave}
                 alt="wave"
-                className="absolute top-0 left-0 opacity-30"
+                className="absolute top-0 left-0 opacity-30 pointer-events-none"
             />
         </header>
     );

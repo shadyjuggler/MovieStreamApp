@@ -7,6 +7,7 @@
     --black-0: #0F0F0F;
     --black-1: #141414;
     --black-2: #1A1A1A;
+    --black-3: #262626;
 
     --gray-4: #BFBFBF;
     --gray-5: #999999;
@@ -69,7 +70,7 @@ button {
 }
 
 .btn {
-    @apply flex gap-3 items-center rounded-md py-2.5 px-4.5;
+    @apply flex gap-3 items-center rounded-md py-3.5 px-5.5;
     background: var(--accent);
     color: var(--white);
     transition: 0.15s ease-in-out;
@@ -100,3 +101,44 @@ button {
 .red-gradient-bg:hover {
     background-size: 150%;
 }
+
+.card {
+    @apply rounded-lg border-2;
+    background: var(--black-2);
+    border-color: var(--black-3); 
+}
+
+.faq-row {
+    position: relative;
+    border: none!important;
+}
+
+.faq-row:not(:last-child):after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, var(--accent) 20%, rgba(255,255,255,0) 100%);
+    background-size: 100%;
+    transition: background 0.5s ease-in-out;
+}
+
+.faq-row:hover::after {
+    background-color: var(--accent);
+}
+
+.row-title {
+    padding: 1.5rem 0rem!important;
+}
+
+.row-title-text::before {
+    background-color: red;
+    display: block;
+}
+
+.icon-wrapper {
+    top: 30px!important;
+}
+
