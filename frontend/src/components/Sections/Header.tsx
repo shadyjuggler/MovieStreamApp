@@ -7,7 +7,7 @@ import Wave from "../../assets/wave.png";
 
 const Header: React.FC = () => {
     return (
-        <>
+        <header id="header">
             <div className="relative min-h-screen flex flex-col items-center overflow-x-hidden">
                 <div className="container relative z-10">
                     <TopBar />
@@ -15,9 +15,7 @@ const Header: React.FC = () => {
                 <MovieGallery />
                 <div className="container relative z-10 mt-auto">
                     <div className="max-w-5xl mx-auto py-16 flex flex-col items-center">
-                        <h1 className="text-4xl font-bold text-white">
-                            The Best Streaming Experience
-                        </h1>
+                        <h1 className="h1">The Best Streaming Experience</h1>
                         <p className="mt-8 text-gray-5 text-center">
                             StreamVibe is the best streaming experience for
                             watching your favorite movies and shows on demand,
@@ -35,8 +33,12 @@ const Header: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <img src={Wave} alt="wave" className="absolute top-0 left-0 opacity-30" />
-        </>
+            <img
+                src={Wave}
+                alt="wave"
+                className="absolute top-0 left-0 opacity-30"
+            />
+        </header>
     );
 };
 
