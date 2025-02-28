@@ -1,9 +1,9 @@
 import Button from "../UI/Button";
-import {data_col_1, data_col_2} from "../BoilerplateData/faq";
+import { dataCol_1, dataCol_2 } from "../BoilerplateData/faq";
+import { JSX, useEffect, useRef } from "react";
 
 //@ts-ignore
 import Faq from "react-faq-component";
-import { useEffect } from "react";
 
 const styles = {
     bgColor: "transparent",
@@ -15,6 +15,31 @@ const styles = {
 };
 
 const FAQ: React.FC = () => {
+
+    const questionsWrapper = useRef<HTMLDivElement | null>(null);
+
+    const seedQuestionRowIndexes = (): void => {
+        const questionColumns =
+            questionsWrapper.current?.querySelectorAll(".faq-body");
+
+        console.log(questionsWrapper.current);
+
+        questionColumns!.forEach((col, i) => {
+            const rows = col.querySelectorAll(".row-title");
+
+            console.log(col);
+
+            rows!.forEach((row, j) => {
+                row.setAttribute(
+                    "style",
+                    `--question-index: '0${i === 0 ? j + 1 : j + 5}';`
+                );
+            });
+        });
+    };
+
+    useEffect(seedQuestionRowIndexes, []);
+
 
     return (
         <section id="faq" className="py-24">
@@ -34,12 +59,12 @@ const FAQ: React.FC = () => {
                     <Button text="Ask a Question" />
                 </div>
 
-                <div className="mt-16 flex gap-12">
+                <div ref={questionsWrapper} className="mt-16 flex gap-12">
                     <div className="px-8">
-                        <Faq data={data_col_1} styles={styles} />
+                        <Faq data={dataCol_1} styles={styles} />
                     </div>
                     <div className="px-8">
-                        <Faq data={data_col_2} styles={styles} />
+                        <Faq data={dataCol_2} styles={styles} />
                     </div>
                 </div>
             </div>

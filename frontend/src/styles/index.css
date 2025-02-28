@@ -139,6 +139,25 @@ button {
 }
 
 .icon-wrapper {
-    top: 30px!important;
+    top: 25px!important;
 }
 
+.row-title {
+    position: relative;
+}
+
+.row-title .row-title-text {
+    padding-left: 5rem;
+}
+
+.row-title::before {
+    content: var(--question-index);
+
+    @apply absolute left-0 w-12 h-12 flex justify-center items-center rounded-lg text-white;  
+
+    top: 50%;
+    translate: 0 -50%;
+
+    background: var(--black-3);
+
+}

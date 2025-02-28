@@ -1,5 +1,7 @@
 import platformData from "../BoilerplateData/platforms";
 
+import { generateKey } from "../../helpers/generateKey";
+
 const CrossPlatform: React.FC = () => {
     return (
         <section id="crossplatform" className="py-24">
@@ -19,7 +21,7 @@ const CrossPlatform: React.FC = () => {
 
                 <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {platformData.map((platform) => (
-                        <div className="flex flex-col gap-8 rounded-lg border-2 border-black-2 p-8 red-gradient-bg cursor-pointer">
+                        <div key={generateKey()} className="flex flex-col gap-8 rounded-lg border-2 border-black-2 p-8 red-gradient-bg cursor-pointer">
                             <div className="flex gap-4 items-center">
                                 <div className="flex justify-center items-center border-1 border-black-2 p-3 rounded-xl bg-black-1 w-16 h-16">
                                     <img

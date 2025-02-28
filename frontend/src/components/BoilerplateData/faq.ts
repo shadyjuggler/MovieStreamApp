@@ -1,4 +1,4 @@
-export const data_col_1 = {
+export const dataCol_1 = {
     rows: [
         {
             title: "What is StreamVibe?",
@@ -26,7 +26,7 @@ export const data_col_1 = {
     ],
 };
 
-export const data_col_2 = {
+export const dataCol_2 = {
     rows: [
         {
             title: "How do I sign up for StreamVibe?",
