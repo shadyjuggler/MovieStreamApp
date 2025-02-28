@@ -26,6 +26,7 @@ const Header: React.FC = () => {
                             you can easily find the content you want to watch.
                         </p>
                         <Button
+                            btnType="accent"
                             className={"mt-12"}
                             svg={play_svg}
                             text={"Start Watching Now"}

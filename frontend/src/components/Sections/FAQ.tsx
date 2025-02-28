@@ -56,7 +56,7 @@ const FAQ: React.FC = () => {
                         </p>
                     </div>
 
-                    <Button text="Ask a Question" />
+                    <Button btnType="accent" text="Ask a Question" />
                 </div>
 
                 <div ref={questionsWrapper} className="mt-16 flex gap-12">

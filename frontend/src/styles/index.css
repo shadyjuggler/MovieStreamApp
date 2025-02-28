@@ -70,17 +70,32 @@ button {
 }
 
 .btn {
-    @apply flex gap-3 items-center rounded-md py-3.5 px-5.5;
-    background: var(--accent);
-    color: var(--white);
+    @apply flex gap-3 items-center justify-center rounded-md py-3.5 px-5.5;
     transition: 0.15s ease-in-out;
-    fill: var(--white);
 }
 
-.btn:hover {
+.btn.accent:hover {
     background: var(--white); 
     color: var(--accent);
     fill: var(--accent);
+}
+
+.btn.accent {
+    background: var(--accent);
+    color: var(--white);
+    fill: var(--white);
+}
+
+.btn.blank {
+    background: var(--black-1);
+    color: var(--white);
+    fill: var(--white);
+}
+
+.btn.blank:hover {
+    background: var(--white);
+    color: var(--black-1);
+    fill: var(--black-1);
 }
 
 .h1 {
@@ -89,6 +104,10 @@ button {
 
 .h2 {
     @apply text-3xl font-bold text-white;
+}
+
+.h4 {
+    @apply text-2xl font-bold text-white;
 }
 
 .red-gradient-bg {
@@ -103,7 +122,7 @@ button {
 }
 
 .card {
-    @apply rounded-lg border-2;
+    @apply rounded-xl border-2;
     background: var(--black-2);
     border-color: var(--black-3); 
 }
