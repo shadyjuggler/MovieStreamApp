@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const SelectPlan: React.FC = () => {
     const [planType, setPlanType] = useState<PlanType>("month");
-
+    //wasup
     const plans = pricingData.filter(plan => plan.type === planType).map((plan) => (
         <div className="card max-w-lg p-10">
             <h4 className="h4">{plan.title}</h4>
