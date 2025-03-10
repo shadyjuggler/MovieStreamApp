@@ -1,6 +1,6 @@
 import Button from "../UI/Button";
 import { dataCol_1, dataCol_2 } from "../BoilerplateData/faq";
-import { JSX, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 //@ts-ignore
 import Faq from "react-faq-component";

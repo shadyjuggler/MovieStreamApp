@@ -111,14 +111,18 @@ button {
 }
 
 .red-gradient-bg {
-    @apply bg-linear-[40deg,#0F0F0F_70%,#220808];
+    @apply bg-linear-[40deg,#0F0F0F_70%,#2c0b0b];
     background-size: 100%;
     background-position: top right;
-    transition: .1s ease-in-out, background-size 1s;
+    transition: .05s ease-in-out, background-size 1s;
 }
 
 .red-gradient-bg:hover {
-    background-size: 150%;
+    background-size: 200%;
+}
+
+.red-mask {
+    background: linear-gradient(90deg,rgba(15,15,15,1) 10%, rgba(15,15,15,.98) 20%, rgba(27,14,14,0.9) 40%, rgba(229,0,0,0.5) 100%);
 }
 
 .card {
